@@ -1,0 +1,15 @@
+{
+    "name": "igorpan/worky",
+    "description": "Small and simple PHP Framework",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Igor Pantovic",
+            "email": "php.igor@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": { "Worky\\": "." }
+    },
+    "require": {}
+}
