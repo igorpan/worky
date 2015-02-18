@@ -23,7 +23,7 @@ class UrlGenerator
     }
 
     /**
-     * Generates an url for route given
+     * Generates an url for route given.
      *
      * @param string $name
      * @param array  $params
@@ -32,14 +32,14 @@ class UrlGenerator
      */
     public function url($name, array $params = [])
     {
-        return $this->request->server['BASE'] . $this->path($name, $params);
+        return $this->request->server['BASE'].$this->path($name, $params);
     }
 
     /**
-     * Generates a path for route given
+     * Generates a path for route given.
      *
      * @param string $name
-     * @param array $params
+     * @param array  $params
      *
      * @return string
      */

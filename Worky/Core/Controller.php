@@ -26,7 +26,7 @@ class Controller
 
     /**
      * @param string $view
-     * @param array $parameters
+     * @param array  $parameters
      *
      * @return Response
      */
@@ -38,11 +38,11 @@ class Controller
     }
 
     /**
-     * Returns a response
+     * Returns a response.
      *
      * @param string $content
-     * @param int $status
-     * @param array $headers
+     * @param int    $status
+     * @param array  $headers
      *
      * @return Response
      */
@@ -52,7 +52,7 @@ class Controller
     }
 
     /**
-     * Returns redirect response
+     * Returns redirect response.
      *
      * @param string $path
      *
@@ -63,18 +63,18 @@ class Controller
         return new Response(null, 302, [sprintf('Location: %s%s', $this->request->server['BASE'], $path)]);
     }
 
-	/**
-	 * Returns redirect response to given route
-	 *
-	 * @param string $routeName
-	 * @param array $routeParams
-	 *
-	 * @return Response
-	 */
+    /**
+     * Returns redirect response to given route.
+     *
+     * @param string $routeName
+     * @param array  $routeParams
+     *
+     * @return Response
+     */
     protected function redirectRoute($routeName, $routeParams = [])
     {
         $generator = $this->container->get('url_generator');
 
         return $this->redirect($generator->path($routeName, $routeParams));
     }
-} 
+}

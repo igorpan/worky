@@ -16,4 +16,4 @@ class Response
         $this->status = $status;
         $this->headers = $headers;
     }
-} 
+}

@@ -25,9 +25,9 @@ class Container
     public $parameters = [];
 
     /**
-     * Registers a service provider
+     * Registers a service provider.
      *
-     * @param string $name
+     * @param string   $name
      * @param callable $provider
      */
     public function provide($name, $provider)
@@ -36,7 +36,7 @@ class Container
     }
 
     /**
-     * Marks a service with mark given
+     * Marks a service with mark given.
      *
      * @param string $serviceName
      * @param string $mark
@@ -52,7 +52,7 @@ class Container
     }
 
     /**
-     * Gets names of all services marked with mark given
+     * Gets names of all services marked with mark given.
      *
      * @param string $mark
      *
@@ -68,13 +68,13 @@ class Container
     }
 
     /**
-     * Gets a service
+     * Gets a service.
      *
      * @param string $name
      *
-     * @return object
-     *
      * @throws \Exception If service doesn't exist
+     *
+     * @return object
      */
     public function get($name)
     {
@@ -90,13 +90,13 @@ class Container
     }
 
     /**
-     * Sets a service
+     * Sets a service.
      *
      * @param string $name
      * @param object $serviceObject
      */
     public function set($name, $serviceObject)
-		{
-				$this->provided[$name] = $serviceObject;
-		}
-} 
+    {
+        $this->provided[$name] = $serviceObject;
+    }
+}

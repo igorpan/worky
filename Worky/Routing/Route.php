@@ -19,4 +19,4 @@ class Route
         $this->controller = $controller;
         $this->method = $method;
     }
-} 
+}

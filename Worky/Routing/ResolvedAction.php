@@ -7,4 +7,4 @@ class ResolvedAction
     public $callable;
 
     public $parameters;
-} 
+}

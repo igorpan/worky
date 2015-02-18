@@ -48,7 +48,7 @@ class FrameworkServicesProvider
                 foreach ($options as $key => $value) {
                     $dsnOptions .= "$key=$value;";
                 }
-            } else if (is_string($options)) {
+            } elseif (is_string($options)) {
                 $dsnOptions = $options;
             }
 

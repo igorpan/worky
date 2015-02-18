@@ -35,4 +35,4 @@ abstract class Application
 
         return call_user_func($action->callable, $action->parameters);
     }
-} 
+}

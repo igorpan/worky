@@ -6,7 +6,7 @@ use Worky\DependencyInjection\Container;
 use Worky\Http\Request;
 
 /**
- * Decides which action should be taken for requests
+ * Decides which action should be taken for requests.
  */
 class ActionResolver
 {
@@ -27,13 +27,13 @@ class ActionResolver
     }
 
     /**
-     * Decides which action should be taken for request passed
+     * Decides which action should be taken for request passed.
      *
      * @param Request $request
      *
-     * @return ResolvedAction
-     *
      * @throws \Exception When it can't resolve action
+     *
+     * @return ResolvedAction
      */
     public function resolve(Request $request)
     {
@@ -61,7 +61,7 @@ class ActionResolver
      *
      * @param string $path
      * @param string $method
-     * @param Route $route
+     * @param Route  $route
      *
      * @return array|null
      */
@@ -69,15 +69,16 @@ class ActionResolver
     {
         // If request method doesn't match
         if ($method !== $route->method) {
-            return null;
+            return;
         }
 
         $routeRegex = str_replace('/', '\\/', $route->path);
         $routeRegex = preg_replace('/:(\w+)/', '(?<$1>[^\/]+)', $routeRegex);
-        $routeRegex = '/^' . $routeRegex . '$/';
+        $routeRegex = '/^'.$routeRegex.'$/';
         if (preg_match($routeRegex, $path, $matches)) {
             return $matches;
         }
-        return null;
+
+        return;
     }
-} 
+}

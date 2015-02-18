@@ -5,7 +5,7 @@ namespace Worky\Http;
 class ResponseRenderer
 {
     /**
-     * Renders response
+     * Renders response.
      *
      * @param Response $response
      */
@@ -19,4 +19,4 @@ class ResponseRenderer
             echo $response->body;
         }
     }
-} 
+}

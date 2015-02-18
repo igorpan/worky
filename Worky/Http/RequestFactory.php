@@ -5,12 +5,12 @@ namespace Worky\Http;
 class RequestFactory
 {
     /**
-     * Creates Request object from PHP superglobals
+     * Creates Request object from PHP superglobals.
      *
      * @param bool $fakeMethods If true and $_POST['_method'] is provided, real method will be overridden by that value.
      *                          Example:
-     *                              Request with $_POST['_method'] == 'DELETE' will be treated as DELETE request instead of POST
-     *                              Request with $_POST['_method'] == 'PATCH' will be treated as PATCH request instead of POST
+     *                          Request with $_POST['_method'] == 'DELETE' will be treated as DELETE request instead of POST
+     *                          Request with $_POST['_method'] == 'PATCH' will be treated as PATCH request instead of POST
      *
      * @return Request
      */
@@ -32,7 +32,7 @@ class RequestFactory
     }
 
     /**
-     * Overrides real request method with fake one
+     * Overrides real request method with fake one.
      *
      * @param Request $request
      */
@@ -42,4 +42,4 @@ class RequestFactory
             $request->server['REQUEST_METHOD'] = $override;
         }
     }
-} 
+}

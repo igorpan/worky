@@ -10,7 +10,7 @@ class ViewRenderer
     private $viewDir;
 
     /**
-     * Keys are helper aliases, values are helper object instances
+     * Keys are helper aliases, values are helper object instances.
      *
      * @var array
      */
@@ -23,18 +23,18 @@ class ViewRenderer
     }
 
     /**
-     * Renders a view
+     * Renders a view.
      *
      * @param string $viewPath
-     * @param array $parameters Parameters that will be available to view
-     *
-     * @return string
+     * @param array  $parameters Parameters that will be available to view
      *
      * @throws \Exception
+     *
+     * @return string
      */
     public function render($viewPath, $parameters = [])
     {
-        $viewPath = $this->viewDir . '/' . $viewPath;
+        $viewPath = $this->viewDir.'/'.$viewPath;
 
         if (!file_exists($viewPath)) {
             throw new \Exception(sprintf('Could not find view file %s', $viewPath));
@@ -45,9 +45,10 @@ class ViewRenderer
             extract($parameters);
             ob_start();
             require $viewPath;
+
             return ob_get_clean();
         };
 
         return $renderingClosure($viewPath, $parameters);
     }
-} 
+}
